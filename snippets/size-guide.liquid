@@ -1,0 +1,32 @@
+{{ 'component-size-guide.css' | asset_url | stylesheet_tag }}
+
+<size-guide>
+  <button
+    id="ShowSizeGuideDrawer"
+    type="button"
+  >
+    Size guide
+  </button>
+</size-guide>
+
+<size-guide-drawer
+  class="gradient"
+  role="dialog"
+  aria-modal="true"
+>
+  <div class="size-guide-drawer__header">
+    <h2>Size Guide Header</h2>
+
+    <button class="size-guide-drawer__button" type="button" aria-label="{{ 'accessibility.close' | t }}">
+      {% render 'icon-close' %}
+    </button>
+  </div>
+
+  <div class="size-guide-drawer__content">
+    Content for size guide...
+  </div>
+</size-guide-drawer>
+
+<script src="{{ 'size-guide.js' | asset_url }}" defer="defer"></script>
+
+
