@@ -27,6 +27,16 @@
   }
 {%- endstyle -%}
 
+{%- liquid
+  assign filters_applied = false
+  for filter in collection.filters
+    if filter.active_values.size > 0
+      assign filters_applied = true
+      break
+    endif
+  endfor
+-%}
+
 <div class="section-{{ section.id }}-padding">
   {%- paginate collection.products by section.settings.products_per_page -%}
     {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
@@ -159,6 +169,74 @@
                 {%- if forloop.index > 2 -%}
                   {%- assign lazy_load = true -%}
                 {%- endif -%}
+                {%- liquid
+                  assign inject_content = false
+                  assign forloop_modulo = forloop.index0 | modulo: 5
+                  if forloop.index0 != 0 and forloop_modulo == 0 and filters_applied == false
+                    assign inject_content = true
+                  endif
+                -%}
+
+                {% if inject_content %}
+                  <li
+                    class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                    {% if settings.animations_reveal_on_scroll %}
+                      data-cascade
+                      style="--animation-order: {{ forloop.index }};"
+                    {% endif %}
+                  >
+                    <p>Injected Content ⭐</p>
+                    <p>Filters Applied: {{ filters_applied }}</p>
+                  </li>
+                {% endif %}
+
+                {% liquid
+                  assign in_grid_content_item = blank
+                  assign product_forloop = forloop
+                  for in_grid_content_meta in collection.metafields.custom.in_grid_content.value
+                    assign content_position = in_grid_content_meta.position | times: 1
+                    assign card_position = product_forloop.index0 | plus: paginate.current_offset
+                    if content_position == card_position
+                      assign in_grid_content_item = in_grid_content_meta
+                      break
+                    endif
+                  endfor
+                %}
+
+                {% if in_grid_content_item != blank %}
+                  <li
+                    class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                    data-cascade
+                    style="--animation-order: {{ forloop.index }};"
+                  >
+                    <div class="ratio" style="--ratio-percent: {{ 100 }}%">
+                      <div class="card__inner media">
+                        <img
+                          srcset="
+                            {%- if in_grid_content_item.media.value.width >= 165 -%}{{ in_grid_content_item.media.value | image_url: width: 165 }} 165w,{%- endif -%}
+                            {%- if in_grid_content_item.media.value.width >= 360 -%}{{ in_grid_content_item.media.value | image_url: width: 360 }} 360w,{%- endif -%}
+                            {%- if in_grid_content_item.media.value.width >= 533 -%}{{ in_grid_content_item.media.value | image_url: width: 533 }} 533w,{%- endif -%}
+                            {%- if in_grid_content_item.media.value.width >= 720 -%}{{ in_grid_content_item.media.value | image_url: width: 720 }} 720w,{%- endif -%}
+                            {%- if in_grid_content_item.media.value.width >= 940 -%}{{ in_grid_content_item.media.value | image_url: width: 940 }} 940w,{%- endif -%}
+                            {%- if in_grid_content_item.media.value.width >= 1066 -%}{{ in_grid_content_item.media.value | image_url: width: 1066 }} 1066w,{%- endif -%}
+                            {{ in_grid_content_item.media.value | image_url }} {{ in_grid_content_item.media.value.width }}w
+                          "
+                          src="{{ in_grid_content_item.media.value | image_url: width: 533 }}"
+                          sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+                          alt="{{ in_grid_content_item.media.value.alt | escape }}"
+                          class="motion-reduce"
+                          {% unless lazy_load == false %}
+                            loading="lazy"
+                          {% endunless %}
+                          width="{{ in_grid_content_item.media.value.width }}"
+                          height="{{ in_grid_content_item.media.value.height }}"
+                        >
+                      </div>
+                    </div>
+                    {{ in_grid_content_item.text }}
+                  </li>
+                {% endif %}
+
                 <li
                   class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                   {% if settings.animations_reveal_on_scroll %}
