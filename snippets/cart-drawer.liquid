@@ -69,6 +69,34 @@
           {% render 'icon-close' %}
         </button>
       </div>
+
+      {% liquid
+        assign free_shipping_threshold = 50000
+        assign free_shipping_spend_more_message = 'Spend # for free shipping'
+        assign free_shipping_reached_message = 'You got free shipping 🎉'
+        assign free_shipping_progress = cart.total_price | times: 100 | divided_by: free_shipping_threshold
+        assign free_shipping_remaining = free_shipping_threshold | minus: cart.total_price
+        if free_shipping_progress > 100
+          assign free_shipping_progress = 100
+        endif
+
+        if free_shipping_progress == 100
+          assign free_shipping_text = free_shipping_reached_message
+        else
+          assign free_shipping_remaining_price = free_shipping_remaining | money_with_currency
+          assign free_shipping_text = free_shipping_spend_more_message | replace: '#', free_shipping_remaining_price
+        endif
+      %}
+
+      {% unless cart == empty %}
+        <p>{{ free_shipping_text }}</p>
+        <div style="background-color: white; height: 20px; width: 100%; position: relative; border: 1px solid black; margin-block-end: 20px; overflow: hidden; border-radius: 40px;">
+          <div
+            style="width: {{ free_shipping_progress }}%; background-color: black; height: 100%; left: 0; position: absolute; top: 0; display: block;"
+          ></div>
+        </div>
+      {% endunless %}
+
       <cart-drawer-items
         {% if cart == empty %}
           class=" is-empty"
