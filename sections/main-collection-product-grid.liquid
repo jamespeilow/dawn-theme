@@ -12,6 +12,7 @@
   <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
+<script src="{{ 'load-more.js' | asset_url }}" defer="defer"></script>
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -262,6 +263,18 @@
             {%- if paginate.pages > 1 -%}
               {% render 'pagination', paginate: paginate, anchor: '' %}
             {%- endif -%}
+
+            <div id="LoadMoreContainer">
+              <load-more>
+                {% if paginate.next %}
+                  <a
+                    href="{{ paginate.next.url }}"
+                  >
+                    Load More
+                  </a>
+                {% endif %}
+              </load-more>
+            </div>
           </div>
         {%- endif -%}
       </div>
