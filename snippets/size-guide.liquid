@@ -1,0 +1,69 @@
+{{ 'component-size-guide.css' | asset_url | stylesheet_tag }}
+
+<size-guide>
+  <button
+    id="ShowSizeGuideDrawer"
+    type="button"
+  >
+    Size guide (custom)
+  </button>
+</size-guide>
+
+<size-guide-drawer
+  class="gradient"
+  role="dialog"
+  aria-modal="true"
+>
+  <div class="size-guide-drawer__header">
+    <h2>Size Guide Header</h2>
+
+    <button class="size-guide-drawer__button" type="button" aria-label="{{ 'accessibility.close' | t }}">
+      {% render 'icon-close' %}
+    </button>
+  </div>
+
+  <div class="size-guide-drawer__content">Content for size guide...</div>
+</size-guide-drawer>
+
+<script src="{{ 'size-guide.js' | asset_url }}" defer="defer"></script>
+
+<modal-opener
+  class="product-popup-modal__opener no-js-hidden quick-add-hidden"
+  data-modal="#PopupModal-size-guide"
+>
+  <button
+    id="Popup-size-guide"
+    class="product-popup-modal__button link"
+    type="button"
+    aria-haspopup="dialog"
+  >
+    Open Size Guide Modal (modal-opener)
+  </button>
+</modal-opener>
+
+<modal-dialog
+  id="PopupModal-size-guide"
+  class="product-popup-modal"
+>
+  <div
+    role="dialog"
+    aria-label="Size Guide"
+    aria-modal="true"
+    class="product-popup-modal__content"
+    tabindex="-1"
+  >
+    <button
+      id="ModalClose-size-guide"
+      type="button"
+      class="product-popup-modal__toggle"
+      aria-label="{{ 'accessibility.close' | t }}"
+    >
+      {% render 'icon-close' %}
+    </button>
+
+    <div class="product-popup-modal__content-info">
+      <h2>Size Guide Title</h2>
+      <p>Size Guide here...</p>
+    </div>
+  </div>
+</modal-dialog>
