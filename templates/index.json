@@ -161,7 +161,7 @@
     "multicolumn": {
       "type": "multicolumn",
       "blocks": {
-        "column1": {
+        "column2": {
           "type": "column",
           "settings": {
             "title": "Column",
@@ -170,7 +170,7 @@
             "link": ""
           }
         },
-        "column2": {
+        "column1": {
           "type": "column",
           "settings": {
             "title": "Column",
@@ -190,8 +190,8 @@
         }
       },
       "block_order": [
-        "column1",
         "column2",
+        "column1",
         "column3"
       ],
       "settings": {
@@ -220,13 +220,13 @@
             "collection": ""
           }
         },
-        "template--14961544298586__33f199f2-4b82-4f23-9d79-ecef5e954e8e-featured_collection-2": {
+        "template--14961544298586__33f199f2-4b82-4f23-9d79-ecef5e954e8e-featured_collection-3": {
           "type": "featured_collection",
           "settings": {
             "collection": ""
           }
         },
-        "template--14961544298586__33f199f2-4b82-4f23-9d79-ecef5e954e8e-featured_collection-3": {
+        "template--14961544298586__33f199f2-4b82-4f23-9d79-ecef5e954e8e-featured_collection-2": {
           "type": "featured_collection",
           "settings": {
             "collection": ""
@@ -235,8 +235,8 @@
       },
       "block_order": [
         "template--14961544298586__33f199f2-4b82-4f23-9d79-ecef5e954e8e-featured_collection-1",
-        "template--14961544298586__33f199f2-4b82-4f23-9d79-ecef5e954e8e-featured_collection-2",
-        "template--14961544298586__33f199f2-4b82-4f23-9d79-ecef5e954e8e-featured_collection-3"
+        "template--14961544298586__33f199f2-4b82-4f23-9d79-ecef5e954e8e-featured_collection-3",
+        "template--14961544298586__33f199f2-4b82-4f23-9d79-ecef5e954e8e-featured_collection-2"
       ],
       "settings": {
         "title": "Collections",
