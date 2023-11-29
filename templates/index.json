@@ -105,6 +105,53 @@
         "padding_bottom": 36
       }
     },
+    "2e88b8ed-bd86-446d-b002-543991ab749e": {
+      "type": "image-banner",
+      "blocks": {
+        "template--14961544298586__2e88b8ed-bd86-446d-b002-543991ab749e-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Zoom in on Scroll",
+            "heading_size": "h1"
+          }
+        },
+        "template--14961544298586__2e88b8ed-bd86-446d-b002-543991ab749e-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "Section showing off Dawn Zoom in on Scroll animation",
+            "text_style": "body"
+          }
+        },
+        "template--14961544298586__2e88b8ed-bd86-446d-b002-543991ab749e-buttons-1": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14961544298586__2e88b8ed-bd86-446d-b002-543991ab749e-heading-1",
+        "template--14961544298586__2e88b8ed-bd86-446d-b002-543991ab749e-text-1",
+        "template--14961544298586__2e88b8ed-bd86-446d-b002-543991ab749e-buttons-1"
+      ],
+      "settings": {
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "zoom-in",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
     "collage": {
       "type": "collage",
       "blocks": {
@@ -354,6 +401,7 @@
     "image_banner",
     "rich_text",
     "featured_collection",
+    "2e88b8ed-bd86-446d-b002-543991ab749e",
     "collage",
     "video",
     "multicolumn",
