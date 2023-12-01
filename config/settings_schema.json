@@ -4,8 +4,8 @@
     "theme_name": "BORN Shopify Theme",
     "theme_version": "1.0.0",
     "theme_author": "Shopify",
-    "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
-    "theme_support_url": "https://support.shopify.com/"
+    "theme_documentation_url": "https:\/\/help.shopify.com\/manual\/online-store\/themes",
+    "theme_support_url": "https:\/\/support.shopify.com\/"
   },
   {
     "name": "t:settings_schema.logo.name",
@@ -80,6 +80,12 @@
             "type": "color",
             "id": "shadow",
             "label": "t:settings_schema.colors.settings.shadow.label",
+            "default": "#121212"
+          },
+          {
+            "type": "color",
+            "id": "custom_accent",
+            "label": "Custom accent color",
             "default": "#121212"
           }
         ],
