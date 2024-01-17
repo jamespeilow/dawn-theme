@@ -197,12 +197,12 @@
     },
     "video": {
       "type": "video",
-      "disabled": true,
       "settings": {
         "heading": "",
         "heading_size": "h1",
         "enable_video_looping": false,
-        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "video": "shopify:\/\/files\/videos\/ScreenRecording2023-09-07at11.48.13.mov",
+        "video_url": "",
         "description": "",
         "full_width": false,
         "color_scheme": "background-1",
