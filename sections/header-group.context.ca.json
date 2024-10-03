@@ -13,5 +13,32 @@
     "market": "ca"
   },
   "sections": {
-  }
+    "announcement-bar": {
+      "settings": {
+      },
+      "blocks": {
+        "announcement-bar-0": {
+          "settings": {
+            "text": "Free Shipping to Canada"
+          }
+        },
+        "announcement_n7LN7": {
+          "type": "announcement",
+          "disabled": false,
+          "settings": {
+            "text": "Canada Specific Messaging",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement-bar-0",
+        "announcement_n7LN7"
+      ]
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
 }
