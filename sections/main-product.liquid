@@ -686,6 +686,11 @@
   </script>
 </section>
 
+{% for item in product.metafields.custom.related_links.value %}
+  {{ item.object.title }}
+  {{ item.object | json }}
+{% endfor %}
+
 {% schema %}
 {
   "name": "t:sections.main-product.name",
