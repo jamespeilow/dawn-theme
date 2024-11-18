@@ -4,12 +4,17 @@
     "theme_name": "BORN Shopify Theme",
     "theme_version": "1.0.0",
     "theme_author": "Shopify",
-    "theme_documentation_url": "https:\/\/help.shopify.com\/manual\/online-store\/themes",
-    "theme_support_url": "https:\/\/support.shopify.com\/"
+    "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
+    "theme_support_url": "https://support.shopify.com/"
   },
   {
     "name": "t:settings_schema.logo.name",
     "settings": [
+      {
+        "type": "richtext",
+        "id": "test_richtext",
+        "label": "Test Richtext"
+      },
       {
         "type": "image_picker",
         "id": "logo",
