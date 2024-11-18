@@ -11,7 +11,7 @@
     "name": "t:settings_schema.logo.name",
     "settings": [
       {
-        "type": "richtext",
+        "type": "text",
         "id": "test_richtext",
         "label": "Test Richtext"
       },
