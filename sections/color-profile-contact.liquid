@@ -1,7 +1,8 @@
 {% form 'contact' %}
   {{ metaobject | json }}
   {%  if form.posted_successfully? %}
-    Success {{ section.settings.url }}
+    Success
+    <a href="{{ metaobject.asset.value }}">Download</a>
   {% endif %}
   {{ form.errors | default_errors }}
 
