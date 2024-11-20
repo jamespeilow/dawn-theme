@@ -1,7 +1,7 @@
 {% form 'contact' %}
   {%  if form.posted_successfully? %}
     Success
-    <a href="{{ metaobject.asset.value | file_url  }}">Download</a>
+    <a href="{{ metaobject.asset.value | remove_first: 'files/' | file_url  }}">Download</a>
   {% endif %}
   {{ form.errors | default_errors }}
 
