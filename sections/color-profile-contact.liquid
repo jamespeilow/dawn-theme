@@ -1,4 +1,5 @@
 {% form 'contact' %}
+  {{ metaobject | json }}
   {%  if form.posted_successfully? %}
     Success {{ section.settings.url }}
   {% endif %}
