@@ -9,7 +9,7 @@
  */
 {
   "current": {
-    "test_richtext": "<h1>Heading</h1><p>This is the <strong>text. </strong>strikethrough.</p><ul><li>Item 1</li><li>Item 2</li></ul>",
+    "test_richtext": "<h1>Heading</h1><p>This is the <strong>text. </strong>strikethrough.</p><ul>\n<li>Item 1</li>\n<li>Item 2</li>\n</ul>",
     "logo": "shopify://shop_images/Guild_Logo.jpg",
     "logo_width": 90,
     "type_header_font": "assistant_n4",
